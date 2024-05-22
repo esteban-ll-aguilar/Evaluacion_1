@@ -1,0 +1,60 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+
+            <div>
+                <div class="booking-form-wrap">
+                    <div class="clo">
+                        <div >
+                            <form class="custom-form " method="post" action="/editar_parque/guardar" role="form">
+                                <div class="text-center">
+                                    <em class="text-white">Universidad Nacional de Loja</em>
+
+                                    <h2 class="text-white">Editar Iinformacion del Parque</h2>
+                                    
+                                    <a href="/" class="btn custom-btn custom-border-btn">Regresar</a>
+                                </div>
+
+                                <div class="booking-form-body">
+                                    <input type="hidden" name="id" id="id" class="form-control" placeholder="id" required value="{{ data._id }}">
+                                    <div class="row">
+                                        <div >
+                                            <p><b>Nombre:</b></p>
+                                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre"  required  value="{{ data._nombre }}">
+                                        </div>
+                                        <div>
+                                            <p><b>Direccion:</b></p>
+                                            <input type="text" name="direccion" id="apellidos" class="form-control" placeholder="Direccion" required  value="{{ data._direccion }}">
+                                        </div>
+
+                                        <div>
+                                            <p><b>Ubicacion GPS:</b></p>
+                                            <input type="location" name="ubicacion" id="dni" class="form-control" placeholder="Ubicacion"   required value="{{ data._ubicacionGPS }}">
+                                        </div>
+
+    
+
+                                        <div>
+                                            <p><b>Detalles:</b></p>
+                                            <input type="text" name="detalle" id="direccion" class="form-control" placeholder="Detalle" required value="{{ data._detalle }}">
+                                        </div>
+
+                                        
+                                        <!-- <div class="col-lg-6 col-12">
+                                            <input type="text" name="tipoIdentificacion" id="tipoIdentificacion" class="form-control" placeholder="Tipo de Identificacion" required>
+                                        </div> -->
+                                        <button type="submit" id="guardar" class="btn custom-btn custom-border-btn">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+{% endblock %}
+
+

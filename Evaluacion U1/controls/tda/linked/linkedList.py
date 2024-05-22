@@ -113,12 +113,7 @@ class Linked_List(object):
         else:
             node = self.__head
             for i in range(0, self._length):
-                
-                if hasattr(node._data, '_clienteId') and node._data._clienteId == data:
-                    out.append(node._data.serialize)
-                if hasattr(node._data, '_dni') and node._data._dni == data:
-                    out.append(node._data.serialize)
-                elif hasattr(node._data, '_NComprobante') and node._data._NComprobante == data:
+                if hasattr(node._data, '_nombre') and node._data._nombre == data:
                     out.append(node._data.serialize)
                 node = node._next
         return out
@@ -159,12 +154,8 @@ class Linked_List(object):
     def __exist__(self, data):
         node = self.__head
         for i in range(0, self._length):
-            print(node._data)
-            if hasattr(node._data, '_dni') and node._data._dni == data:
-                print('Ya existe un nodo con este dato (_dni)')
-                return True
-            elif hasattr(node._data, '_NComprobante') and node._data._NComprobante == data:
-                print('Ya existe un nodo con este dato (_NComprobante)')
+            if hasattr(node._data, '_nombre') and node._data._nombre == data:
+                print('Ya existe un nodo con este dato (nombre)')
                 return True
             node = node._next
         return False
