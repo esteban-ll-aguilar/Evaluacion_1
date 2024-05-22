@@ -21,20 +21,32 @@ from controls.retencionListDaoControl import RetencionListDaoControl
 from controls.personaListControl import PersonaListControl
 from controls.facturaListControl    import FacturaListControl
 from controls.tda.stack.stack import Stack
+from controls.terencionQueque import RetencionQueue
 #import cProfile
 import os
 import psutil
 
-pcd = PersonaListControl()
+""" pcd = PersonaListControl()
 fdc = FacturaListControl()
-rtldc = RetencionListDaoControl(useList=False, size=25)
+rtldc = RetencionListDaoControl(useList=False, size=25) """
 
 """ pcd = PersonaDaoControl()
 fdc = FacturaDaoControl()
 rtldc = RetencionListDaoControl(useList=True, size=25)
 pl = PersonaListControl() """
+
+rqq = RetencionQueue(useList=False, size=25)
 try:
-    tiempo_programa = time()
+    rqq._retencion._clienteId = "07077111"
+    rqq._retencion._facturaId = "5454651151"
+    rqq._retencion._baseImponible = 4
+    rqq._retencion._fechaEmicion = "2024-05-19 01:55"
+    rqq._retencion._porcentajeRetencion = 0.08
+    rqq._retencion._totalRetenido = 0.32
+    rqq.save
+    
+    
+    """ tiempo_programa = time()
     time_inicio = time()
     rtldc._retencion._clienteId = "0705743177111"
     rtldc._retencion._facturaId = "5454651151"
@@ -92,7 +104,7 @@ try:
     
     print("\nMemoria usada por el proceso: ", memory_usage, "MB")
     print("\nTiempo total de ejecucion del programa: ", tiempo_programa_fin - tiempo_programa)
-    
+     """
 except Exception as e:
     print(e)
 
