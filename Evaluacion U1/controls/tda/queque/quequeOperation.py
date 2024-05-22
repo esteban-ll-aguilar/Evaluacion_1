@@ -40,7 +40,7 @@ class QuequeOperation:
         if self._class.isEmpty:
             raise LinkedEmptyException("Queque is Empty")
         else:
-            self.detele(0)
+            self._class.detele(0)
             
     @property
     def print(self):
